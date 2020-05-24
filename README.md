@@ -1,5 +1,5 @@
 # zbar
-qrcode decode lib based on ZBar
+qrcode and bar code decode lib based on ZBar
 
 # usage
 ```go
