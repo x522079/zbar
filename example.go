@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"zbar/zbar"
+	"github.com/x522079/zbar/zbar"
 )
 
 func main() {

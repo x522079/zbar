@@ -36,7 +36,7 @@ func (z *Zbar) Decode() (*Barcodes, error) {
 
 	out, err := cmd.CombinedOutput()
 	if err != nil && cmd.ProcessState.ExitCode() != 4 {
-		return nil, err
+		return nil, errors.New(string(out))
 	}
 
 	return z.toEntity(out)
