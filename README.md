@@ -1,2 +1,2 @@
 # zbar
-go lib based on ZBar
+qrcode lib based on ZBar
