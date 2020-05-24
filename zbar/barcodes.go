@@ -20,15 +20,18 @@ type Symbol struct {
 	Data    string `xml:"data"`
 }
 
-func (b *Barcodes) Symbols() map[string]Symbol {
-	texts := make(map[string]Symbol)
+func (b *Barcodes) Symbols() map[string][]Symbol {
+	texts := make(map[string][]Symbol)
 	for _, source := range b.Sources {
 		if len(source.Href) == 0 {
 			continue
 		}
 		for _, index := range source.Indexes {
 			for _, symbol := range index.Symbols {
-				texts[source.Href] = symbol
+				if _, ok := texts[source.Href]; !ok {
+					texts[source.Href] = make([]Symbol, 0)
+				}
+				texts[source.Href] = append(texts[source.Href], symbol)
 			}
 		}
 	}

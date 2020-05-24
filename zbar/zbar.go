@@ -25,7 +25,7 @@ func init() {
 
 func (z *Zbar) Decode() (*Barcodes, error) {
 	if len(z.Source) == 0 {
-		return nil, errors.New("未设定文件路径")
+		return nil, errors.New("please set image paths first")
 	}
 
 	args := make([]string, 0)
